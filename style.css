@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-image: linear-gradient(180deg,rgb(15, 2, 4),rgb(9, 36, 155));
+    width: 100vw;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+
+}
+#menubar nav ul li label{
+    cursor: pointer;
+
+}
+label{
+    text-decoration: none;
+    color: white;
+}
+
+#menubar>input , #menubar > section .Home,
+#menubar > section .Corona,
+#menubar > section .Movies,
+#menubar > section .Sport,
+#menubar > section .Trending,
+#menubar > section .Technology,
+#menubar > section .Lifestyle{
+    display: none;
+}
+#Home:checked ~ section .Home,
+#Corona:checked ~ section .Corona,
+#Movies:checked ~ section .Movies,
+#Sport:checked ~ section .Sport,
+#Trending:checked ~ section .Trending,
+#Technology:checked ~ section .Technology,
+#Lifestyle:checked ~ section .Lifestyle{
+    display: flex;
+}
+
+#Home:checked ~ nav ul .Home,
+#Corona:checked ~ nav ul .Corona,
+#Movies:checked ~ nav ul .Movies,
+#Sport:checked ~ nav ul .Sport,
+#Trending:checked ~ nav ul .Trending,
+#Technology:checked ~ nav ul .Technology,
+#Lifestyle:checked ~ nav ul .Lifestyle{
+    background-color: blue;
+    color: black;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+li{ 
+    
+    list-style: none;
+    padding: 20px;
+}
+#Cards{
+    width: 1200px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+#Cards > div{
+    margin-bottom: 70px;
+
+}
+.Box
+{
+    position: relative;
+    width : 350px;
+    height: 400px;
+    background-color: black;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+    
+}
+.Box .img1
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.Box .img1 img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    
+}
+td,th{
+    border-bottom: 2px solid grey;
+    padding: 0;
+    margin: 0;
+}
+
+.Box:hover .img1 img{
+    opacity: 0;
+}
+.Box  .Content{
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 100px;
+    background: white;
+    transition: 2s;
+    overflow: hidden;
+    animation-name: backcolor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes backcolor{
+    20% {
+        background-color: red;
+        color: black;
+    }
+    40% {
+        background-color: blueviolet;
+    }
+    60% {
+        background-color: yellow;
+    }
+}
+.Box:hover .Content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: 0.5s;
+    animation: none;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.Box:hover div p{
+    display: block;
+
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Meera Inimai', sans-serif;
+}
+p{
+    text-indent: 10px;
+    font-size: smaller;
+    font-family: 'Meera Inimai', sans-serif;
+    text-align: justify;
+    display: none;
+    
+}
+@media only screen and (max-width: 600px)
+{
+    body{
+        width: 100vw;
+        font-size: small;
+    }
+    #menubar nav ul {
+        display: block;
+    }
+    #Home:checked ~ section .Home,
+    #Corona:checked ~ section .Corona,
+    #Movies:checked ~ section .Movies,
+    #Sport:checked ~ section .Sport,
+    #Trending:checked ~ section .Trending,
+    #Technology:checked ~ section .Technology,
+    #Lifestyle:checked ~ section .Lifestyle{
+        display: block;
+    }
+    #Cards{
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 601px)
+{
+    body{
+        width: 100%;
+        font-size: medium;
+    }
+    #Cards{
+        width: 80%;
+        
+    }
+    #Cards > div{
+        margin-bottom: 30px;
+        margin-left: 10px;
+
+    
+    }
+    #menubar nav ul li{
+        padding: 10px;
+    }
+    #menubar nav{
+        width: auto;
+    }
+    #menubar nav ul {
+        display: flex;
+        font-size: medium;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .Box
+    {
+    position: relative;
+    width : 200px;
+    height: 300px;
+    background-color: black;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+    
+    }
+    #Home:checked ~ section .Home,
+    #Corona:checked ~ section .Corona,
+    #Movies:checked ~ section .Movies,
+    #Sport:checked ~ section .Sport,
+    #Trending:checked ~ section .Trending,
+    #Technology:checked ~ section .Technology,
+    #Lifestyle:checked ~ section .Lifestyle{
+        display: flex;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+    body{
+        width:100vw;
+        font-size: medium;
+    }
+    #Cards{
+        width: 1200px;
+    }
+    #menubar nav ul {
+        display: flex;
+
+    }
+    li{ 
+    
+        list-style: none;
+        
+        font-size: larger;
+    }
+    .Box
+    {
+        position: relative;
+        width : 350px;
+        height: 400px;
+        background-color: black;
+        box-shadow: 0 30px 30px rgba(0,0,0,0.5);
+        
+    }
+    
+    
+    #Home:checked ~ section .Home,
+    #Corona:checked ~ section .Corona,
+    #Movies:checked ~ section .Movies,
+    #Sport:checked ~ section .Sport,
+    #Trending:checked ~ section .Trending,
+    #Technology:checked ~ section .Technology,
+    #Lifestyle:checked ~ section .Lifestyle{
+        display: flex;
+    }
+
+} 
