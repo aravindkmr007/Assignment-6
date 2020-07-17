@@ -51,14 +51,18 @@ label{
     color: black;
     cursor: pointer;
 }
-ul{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
+
+#menu {
+    background-color: DodgerBlue; 
+    border: none; 
+    color: white; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 
-li{ 
+
+li{
     
     list-style: none;
     padding: 20px;
@@ -156,6 +160,7 @@ td,th{
 
 }
 
+
 h3 {
     text-align: center;
     font-family: 'Meera Inimai', sans-serif;
@@ -168,14 +173,26 @@ p{
     display: none;
     
 }
+nav > input , nav #menu{
+    display: none;
+}
 @media only screen and (max-width: 600px)
 {
     body{
         width: 100vw;
         font-size: small;
     }
-    #menubar nav ul {
+    #menubar nav ul , nav > input {
+        display: none;
+    }
+    nav #menu{
+        display: inline;
+    }
+    #check:checked ~  ul {
+        position: relative;
+        padding-top: 30px;
         display: block;
+        text-align: center;
     }
     #Home:checked ~ section .Home,
     #Corona:checked ~ section .Corona,
@@ -189,6 +206,10 @@ p{
     #Cards{
         width: 100%;
     }
+    th,td {
+        text-align: center;
+    }
+    
     
 }
 
@@ -202,14 +223,19 @@ p{
         width: 80%;
         
     }
+    
+
+    
     #Cards > div{
         margin-bottom: 30px;
         margin-left: 10px;
 
     
     }
+    
     #menubar nav ul li{
         padding: 10px;
+        
     }
     #menubar nav{
         width: auto;
@@ -237,6 +263,12 @@ p{
     #Technology:checked ~ section .Technology,
     #Lifestyle:checked ~ section .Lifestyle{
         display: flex;
+    }
+    Button {
+        display: none;
+    }
+    #check {
+        display: none;
     }
 
 }
@@ -267,6 +299,9 @@ p{
         box-shadow: 0 30px 30px rgba(0,0,0,0.5);
         
     }
+    #check {
+        display: none;
+    }
     
     
     #Home:checked ~ section .Home,
@@ -277,6 +312,9 @@ p{
     #Technology:checked ~ section .Technology,
     #Lifestyle:checked ~ section .Lifestyle{
         display: flex;
+    }
+    Button {
+        display: none;
     }
 
 } 
